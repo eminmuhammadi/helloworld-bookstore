@@ -1,0 +1,23 @@
+{
+  "name": "helloworld-bookstore",
+  "version": "0.1.0",
+  "description": "Book Store",
+  "main": "src/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "mocha ./test/* --exit",
+    "build": "npm run test && browserify src/main.js | terser --compress --mangle > build/bundle.js"
+  },
+  "author": "Emin Muhammadi <muemin17631@sabah.edu.az> (https://github.com/eminmuhammadi)",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "17.0.0",
+    "mocha": "8.3.0",
+    "terser": "5.6.0"
+  },
+  "dependencies": {
+    "assert": "2.0.0"
+  }
+}
