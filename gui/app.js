@@ -148,7 +148,8 @@ class App extends Component {
               <span className="badge bg-secondary">{cart.length}</span>
             </h4>
             <ul className="list-group mb-3">
-              {cart.map((item, i) => {
+              
+              {(cart.length>0) ? cart.map((item, i) => {
                 return (
                   <li
                     key={i}
@@ -160,17 +161,24 @@ class App extends Component {
                     <span className="text-muted">€ {item.price}</span>
                   </li>
                 );
-              })}
-              <li className="list-group-item d-flex justify-content-between lh-condensed">
-                <div className="text-center mx-auto">
-                  <h6 className="my-0">
-                    Total / Discounted price ({getPercentage}%)
-                  </h6>
-                  <hr />
-                  <span className="text-muted">
-                    € {totalPrice} / € {discountedPrice}
-                  </span>
+              }) : <li className="text-muted list-group-item d-flex justify-content-between lh-condensed">
+                  Your cart is empty.
+              </li>}
+
+              <hr/>
+
+              <li className="mt-2 list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 className="my-0">Total</h6>
                 </div>
+                <span className="text-muted">€ {totalPrice}</span>
+              </li>
+
+              <li className="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 className="my-0">Discounted price ({getPercentage}%)</h6>
+                </div>
+                <span className="text-muted">€ {discountedPrice}</span>
               </li>
             </ul>
           </div>
