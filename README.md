@@ -1,0 +1,36 @@
+# Hello World Bookstore
+
+## Application
+The Application should be located in the ```build``` folder. If this folder does not
+exists please, run ```npm run build```.
+
+## Spec 
+```
+The Hello World bookstore has set out to change their sales strategies to 
+attract more customers before Halloween.
+ 
+1) On the eve of the campaign, the bookstore has books in 3 categories: 
+books in a general category, second-hand books and Halloween-themed books.
+ 
+2) Books in a general category are € 10, second-hand books are € 5 
+and Halloween-themed books are € 7.5. These books have fixed prices.
+ 
+3) Generally, customers get a 10% discount if they make a 
+purchase of € 25 or more, a 15% discount if they make a purchase of € 45 
+or more, and a 20% discount if they make a purchase of € 75 or more. 
+However, customers must purchase at least 1 Halloween-themed book
+to receive this discount.
+ 
+4) If a customer buys 3 or more books in a general category, 1 Halloween book is free. 
+(This gift book is not considered for a general discount)
+ 
+5) If a customer buys 6 or more second-hand books, 1 Halloween book is free. 
+(This gift book is not considered for a general discount)
+ 
+6) 4. and 5. are invalid at the same time. However, one of them must be applied.
+ 
+7) According to the general rules, each VIP customer receives a 
+2% discount on each book when they purchase books in a general category.
+ 
+8) The percentage of the total discount cannot exceed 25%.
+```
