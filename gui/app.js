@@ -90,7 +90,7 @@ class App extends Component {
                         this.updateView();
                       }}
                     >
-                      Order Book
+                      Add to cart
                     </button>
                   </div>
                 </div>
@@ -112,7 +112,7 @@ class App extends Component {
                         this.updateView();
                       }}
                     >
-                      Order Book
+                      Add to cart
                     </button>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ class App extends Component {
                         this.updateView();
                       }}
                     >
-                      Order Book
+                      Add to cart
                     </button>
                   </div>
                 </div>
