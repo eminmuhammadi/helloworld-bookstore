@@ -130,8 +130,10 @@ class HalloweenCampaign
          (nSecondHand >= 6 && this.freeHalloweenBook < 1)) 
         {
             this.freeHalloweenBook += 1;
-            this.addToCart(2);
-            this.totalPrice -= this.books[2].price;
+            (this.cart).push({
+                ...this.books[2],
+                price: 0
+            });
         }
 
         // According to the general rules, each VIP customer receives a 

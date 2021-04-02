@@ -176,7 +176,7 @@ class App extends Component {
 
               <li className="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 className="my-0">Discounted price ({getPercentage}%)</h6>
+                  <h6 className="my-0">Discounted price ({(getPercentage <= 0) ? getPercentage : '-'+getPercentage}%)</h6>
                 </div>
                 <span className="text-muted">€ {discountedPrice}</span>
               </li>
