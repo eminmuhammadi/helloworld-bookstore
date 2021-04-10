@@ -37,7 +37,7 @@ class App extends Component {
     this.setState({
       totalPrice: this.state.bookStore.totalPrice,
       discountedPrice: this.state.bookStore.getDiscountedPrice(),
-      getPercentage: this.state.bookStore.getPercentage(),
+      getPercentage: this.state.bookStore.applyDiscountGetPercentage(),
       cart: this.state.bookStore.cart,
     });
   }

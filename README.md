@@ -1,10 +1,32 @@
 # Hello World Bookstore
 
+## Building steps
+
+```
+npm install
+```
+
+```
+npm run build
+```
+
+```
+npm run test
+```
+
+## Description of contents:
+
+- Graphic User Interface (Builded) locates in ```build/index.html```
+- Coverage report locates in ```build/report/index.html```
+- Unit tests locates in ```test/```
+- Library locates in ```src/```
+- GUI source files locates in ```gui/```
+
 ## Application
 The Application should be located in the ```build``` folder. If this folder does not
 exists please, run ```npm run build```.
 
-## Spec 
+### Spec 
 ```
 The Hello World bookstore has set out to change their sales strategies to 
 attract more customers before Halloween.

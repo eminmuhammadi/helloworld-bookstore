@@ -1,5 +1,5 @@
 /**
- * HalloweenCampaign
+ * Halloween Campaign
  * by Hello World Bookstore
  * 
  * @version 0.1.0
@@ -17,6 +17,18 @@ class HalloweenCampaign
         this.isUserVIP  = isUserVIP;
         this.totalPrice = 0;
         this.freeHalloweenBook = 0;
+
+        if(typeof this.isUserVIP != 'boolean') throw new Error('isUserVIP should be formatted as boolean');
+        if((this.books).length <= 0) throw new Error('Books DB should be formatted as array');
+
+        for(let i=0; i<(this.books).length; i++)
+        {
+            if(this.books[i]['price'] === undefined) throw new Error('Books DB => price should be exists');
+            if(this.books[i]['category'] === undefined) throw new Error('Books DB => category should be exists');
+
+            if(typeof this.books[i].price != 'number') throw new Error('Books DB => price should be formatted as number');
+            if(typeof this.books[i].category != 'string') throw new Error('Books DB => category should be formatted as string');   
+        }
     }
 
     /**
@@ -38,7 +50,7 @@ class HalloweenCampaign
      */
     getDiscountedPrice()
     {
-        const percentage = this.getPercentage();
+        const percentage = this.applyDiscountGetPercentage();
 
         return this.totalPrice - ((this.totalPrice * percentage)/100);
     }
@@ -80,7 +92,7 @@ class HalloweenCampaign
      * 
      * @returns percentage
      */
-    getPercentage()
+    applyDiscountGetPercentage()
     {
         let percentage = 0;
         const totalPrice = this.totalPrice;
@@ -130,10 +142,19 @@ class HalloweenCampaign
          (nSecondHand >= 6 && this.freeHalloweenBook < 1)) 
         {
             this.freeHalloweenBook += 1;
-            (this.cart).push({
-                ...this.books[2],
-                price: 0
-            });
+
+            /*  ===========
+                Trivial BUG
+                ===========
+                Solved: 
+
+                (this.cart).push({
+                    ...this.books[2],
+                    price: 0
+                });
+                ===========
+            */
+            this.addToCart(2);
         }
 
         // According to the general rules, each VIP customer receives a 
