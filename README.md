@@ -8,6 +8,8 @@ The Hello World bookstore has set out to change their sales strategies to attrac
 
 - [CI testing](https://github.com/eminmuhammadi/helloworld-bookstore/actions/workflows/startTest.yml)
 
+- [Docs](https://eminmuhammadi.github.io/helloworld-bookstore/docs/HalloweenCampaign.html)
+
 ## Pre-defined Bug
 ``src/index.js`` line ``143``
 
