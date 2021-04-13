@@ -1,4 +1,35 @@
 # Hello World Bookstore
+The Hello World bookstore has set out to change their sales strategies to attract more customers before Halloween.
+
+## Demo
+- [GUI](https://eminmuhammadi.github.io/helloworld-bookstore/build/)
+
+- [Coverage Report](https://eminmuhammadi.github.io/helloworld-bookstore/build/report/)
+
+- [CI testing](https://github.com/eminmuhammadi/helloworld-bookstore/actions/workflows/startTest.yml)
+
+## Pre-defined Bug
+``src/index.js`` line ``143``
+
+```js
+...
+{
+    this.freeHalloweenBook += 1;
+
+    /*  ===========
+        Trivial BUG
+        ===========
+        Solved: 
+        (this.cart).push({
+            ...this.books[2],
+            price: 0
+        });
+        ===========
+    */
+    this.addToCart(2);
+}
+...
+```
 
 ## Building steps
 
