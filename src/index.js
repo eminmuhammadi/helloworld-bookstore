@@ -2,7 +2,7 @@
  * Halloween Campaign
  * by Hello World Bookstore
  * 
- * @version 0.1.0
+ * @version 0.1.1
  */
 class HalloweenCampaign
 {   
@@ -19,6 +19,11 @@ class HalloweenCampaign
         this.totalPrice = 0;
         this.freeHalloweenBook = 0;
 
+        /*  ===========
+            Trivial BUG #1
+            ===========
+        */
+
         if(typeof this.isUserVIP != 'boolean') throw new Error('isUserVIP should be formatted as boolean');
         if((this.books).length <= 0) throw new Error('Books DB should be formatted as array');
 
@@ -27,8 +32,8 @@ class HalloweenCampaign
             if(this.books[i]['price'] === undefined) throw new Error('Books DB => price should be exists');
             if(this.books[i]['category'] === undefined) throw new Error('Books DB => category should be exists');
 
-            if(typeof this.books[i].price != 'number') throw new Error('Books DB => price should be formatted as number');
-            if(typeof this.books[i].category != 'string') throw new Error('Books DB => category should be formatted as string');   
+            if(typeof this.books[i]['price'] != 'number') throw new Error('Books DB => price should be formatted as number');
+            if(typeof this.books[i]['category'] != 'string') throw new Error('Books DB => category should be formatted as string');   
         }
     }
 
@@ -145,10 +150,10 @@ class HalloweenCampaign
             this.freeHalloweenBook += 1;
 
             /*  ===========
-                Trivial BUG
+                Trivial BUG #2
                 
-                #1 The price of the Haloween book should be free
-                #2 It effects the discounted prices (10%, 15%, 20%)
+                The price of the Haloween book should be free
+                It effects the discounted prices (10%, 15%, 20%)
                 ===========
                 Solutions: 
 

@@ -105,8 +105,8 @@ describe("Bookstore::classifyBooksOnCart", () => {
     assert.deepStrictEqual(store.classifyBooksOnCart(), result);
   });
 
-  // Discount After :=> 6 Second hand books = 6 General books + 1 Halloween
-  it("[Positive Test] #3 Get counts of the books by category after Discount", () => {
+  // Discount After :=> 6 Second hand books = 6 General books
+  it("[Positive Test] #3 Get counts of the books by category before Discount", () => {
     const booksDB = [
       { category: "General", price: 10 },
       { category: "Second Hand", price: 5 },
@@ -123,11 +123,8 @@ describe("Bookstore::classifyBooksOnCart", () => {
     const result = {
       general: 0,
       secondHand: 6,
-      halloween: 1,
+      halloween: 0,
     };
-
-    // apply discount root func
-    store.applyDiscountGetPercentage();
 
     assert.deepStrictEqual(store.classifyBooksOnCart(), result);
   });

@@ -43,7 +43,7 @@ describe("Bookstore::Constructor", () => {
 
     it("[Negative Test] Books DB should be include non-empty price", () => {
       try {
-        new bookStore([{ category: null }], false);
+        new bookStore([{ category: "General" }], false);
       } catch (err) {
         return;
       }
@@ -61,26 +61,16 @@ describe("Bookstore::Constructor", () => {
       assert.fail("Books DB should be defined");
     });
 
-    it("[Negative Test] Category should be string #1", () => {
+    it("[Negative Test] Category should be string", () => {
       try {
-        new bookStore([[{ category: false, price: 0 }]], false);
+        new bookStore([{category: false, price: 1}], false);
       } catch (err) {
         return;
       }
 
-      assert.fail("Category should be string #1");
+      assert.fail("Category should be string");
     });
     
-    it("[Negative Test] Price should be a number #2", () => {
-      try {
-        new bookStore([{category: 12312312312, price: 0}], false);
-      } catch (err) {
-        return;
-      }
-
-      assert.fail("Price should be a number #2");
-    });
-
     /*
     |---------------------------------------------------------------------- 
     | Constructor => books => price
@@ -106,24 +96,24 @@ describe("Bookstore::Constructor", () => {
       assert.fail("Books DB should be include non-empty category");
     });
 
-    it("[Negative Test] Price should be integer", () => {
+    it("[Negative Test] Price should be number", () => {
       try {
-        new bookStore([[{ category: "General", price: "PriceString" }]], false);
+        new bookStore([{ category: "General", price: "PriceString" }], false);
       } catch (err) {
         return;
       }
 
-      assert.fail("Price should be integer");
+      assert.fail("Price should be number");
     });
 
-    it("[Negative Test] Price should be positive integer", () => {
+    it("[Negative Test] Price should be a non-negative number", () => {
       try {
-        new bookStore([[{ category: "General", price: -7 }]], false);
+        new bookStore([{category: "General", price: -10}], false);
       } catch (err) {
         return;
       }
 
-      assert.fail("Price should be positive integer");
+      assert.fail("Price should be a non-negative number");
     });
 
     /*
@@ -131,14 +121,14 @@ describe("Bookstore::Constructor", () => {
     | Constructor => books => price, category
     |------------------------------------------------------------------
     */
-    it("[Negative Test] Books and price should be included", () => {
+    it("[Negative Test] Books, price and isUserVIP should be included", () => {
       try {
         new bookStore();
       } catch (err) {
         return;
       }
 
-      assert.fail("Books and price should be included");
+      assert.fail("Books, price and isUserVIP should be included");
     });
 
     it("[Negative Test] Books DB should be include both category and price", () => {
@@ -150,16 +140,6 @@ describe("Bookstore::Constructor", () => {
 
       assert.fail("Books DB should be include both category and price");
     });
-
-    it("[Negative Test] Price should be a number", () => {
-      try {
-        new bookStore([{category: "General", price: 'MyPrice'}], false);
-      } catch (err) {
-        return;
-      }
-
-      assert.fail("Price should be a number");
-    });
   });
 
   /*
@@ -168,34 +148,34 @@ describe("Bookstore::Constructor", () => {
   |----------------------------------------------------------------------
   */
   describe("isUserVIP", () => {
-    it("[Negative Test] Books DB should be included", () => {
+    it("[Negative Test] isUserVIP should be included", () => {
       try {
         new bookStore([{ category: "General", price: 0 }]);
       } catch (err) {
         return;
       }
 
-      assert.fail("Books DB should be included");
+      assert.fail("isUserVIP should be included");
     });
 
-    it("[Negative Test] Books DB should be non-empty", () => {
+    it("[Negative Test] isUserVIP should be non-empty", () => {
       try {
         new bookStore([{ category: "General", price: 0 }], null);
       } catch (err) {
         return;
       }
 
-      assert.fail("Books DB should be non-empty");
+      assert.fail("isUserVIP should be non-empty");
     });
 
-    it("[Negative Test] isUserVIP should be boolean", () => {
+    it("[Negative Test] isUserVIP should be boolean not string", () => {
       try {
         new bookStore([{ category: "General", price: 0 }], "boolean");
       } catch (err) {
         return;
       }
 
-      assert.fail("isUserVIP should be boolean");
+      assert.fail("isUserVIP should be boolean not string");
     });
   });
 
@@ -206,7 +186,11 @@ describe("Bookstore::Constructor", () => {
   */
   describe("Init", () => {
     it("[Positive Test] Success", () => {
-      new bookStore([{ category: "General", price: 0 }], false);
+      new bookStore([{ category: "General", price: 7.5 }], false);
+    });
+
+    it("[Positive Test] Success", () => {
+      new bookStore([{ category: "General", price: 7.5 }], true);
     });
   });
 });

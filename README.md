@@ -11,7 +11,9 @@ The Hello World bookstore has set out to change their sales strategies to attrac
 - [Docs](https://eminmuhammadi.github.io/helloworld-bookstore/docs/HalloweenCampaign.html)
 
 ## Pre-defined Bug
-``src/index.js`` line ``143``
+- ``src/index.js`` line ``143``
+
+The price of the free book should be 0:
 
 ```js
 ...
@@ -30,6 +32,16 @@ The Hello World bookstore has set out to change their sales strategies to attrac
     */
     this.addToCart(2);
 }
+...
+```
+
+- ``src/index.js`` line ``143``
+
+The price of the book should be non-negative:
+
+```js
+...
+constructor(books, isUserVIP)
 ...
 ```
 
